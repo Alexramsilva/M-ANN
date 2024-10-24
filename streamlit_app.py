@@ -97,17 +97,29 @@ if st.button('Calcular'):
     st.write('Z2:', Z2)
     st.write('A2 (ReLU(Z2)):', A2)
     st.write('Z3 (Salida Final, Y_hat):', Z3)
+# Personalización de diseño
+st.markdown("""
+<style>
+    .stApp {
+        background-color:  #da3262;
+    }
+    .css-1d391kg {
+        color:  #faf7f8;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 
 # Insertar el código HTML con estilos personalizados
 st.markdown("""
     <div class="container col-sm-5 creditos text-center">
-        <p style="margin-top:0;margin-bottom:0;font-size:15px;color: #dad3d5;text-align:center">
+        <p style="margin-top:0;margin-bottom:0;font-size:15px;color: #424040;text-align:center">
             <strong>Colaboración:</strong>
         </p>
-        <p style="margin-top:0;margin-bottom:0;font-size:12px;color: #dad3d5;text-align:center">
+        <p style="margin-top:0;margin-bottom:0;font-size:12px;color:  #979394 ;text-align:center">
             <strong>Asignatura (UCA): Métodos Cuantitativos  LCFI-URC</strong>
         </p>
-        <p style="margin-top:0;margin-bottom:0;font-size:12px;color: #dad3d5;text-align:center">
+        <p style="margin-top:0;margin-bottom:0;font-size:12px;color:  #979394 ;text-align:center">
             <strong>Grupo 103 GAM-LCFI-URC</strong>
         </p>
     </div>
