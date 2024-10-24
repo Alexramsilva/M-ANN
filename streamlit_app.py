@@ -18,10 +18,6 @@ st.image("URC.png", caption="LCFI-URC Universidad Rosario Castellanos", width=20
 def relu(z):
     return np.maximum(0, z)
 
-# Definir la función Sigmoide
-def sigmoid(z):
-    return 1 / (1 + np.exp(-z))
-
 # Definir las operaciones neuronales con tres capas
 def forward_pass(X, W1, b1, W2, b2, W3, b3):
     # Cálculo de Z1
@@ -59,50 +55,13 @@ for i in range(x_rows):
 
 X = np.array(X)
 
-# Entradas para W1
-st.subheader('Matriz de Pesos W1')
-w1_cols = st.number_input('Número de columnas de W1 (dimensión de A1)', min_value=1, max_value=10, value=3)
-W1 = []
-for i in range(x_cols):
-    row = st.text_input(f'Fila {i+1} de W1 (separar valores por comas)', value='0,0,0')
-    W1.append([float(val) for val in row.split(',')])
-
-W1 = np.array(W1)
-
-# Entradas para el vector b1
-st.subheader('Vector de sesgo b1')
-b1 = st.text_input('Vector b1 (separar valores por comas)', value='0,0,0')
-b1 = np.array([float(val) for val in b1.split(',')]).reshape(1, -1)
-
-# Entradas para W2
-st.subheader('Matriz de Pesos W2')
-w2_cols = st.number_input('Número de columnas de W2 (dimensión de A2)', min_value=1, max_value=10, value=3)
-W2 = []
-for i in range(w1_cols):
-    row = st.text_input(f'Fila {i+1} de W2 (separar valores por comas)', value='0,0,0')
-    W2.append([float(val) for val in row.split(',')])
-
-W2 = np.array(W2)
-
-# Entradas para el vector b2
-st.subheader('Vector de sesgo b2')
-b2 = st.text_input('Vector b2 (separar valores por comas)', value='0,0,0')
-b2 = np.array([float(val) for val in b2.split(',')]).reshape(1, -1)
-
-# Entradas para W3
-st.subheader('Matriz de Pesos W3')
-w3_cols = st.number_input('Número de columnas de W3 (dimensión de salida, Y_hat)', min_value=1, max_value=10, value=1)
-W3 = []
-for i in range(w2_cols):
-    row = st.text_input(f'Fila {i+1} de W3 (separar valores por comas)', value='0,0')
-    W3.append([float(val) for val in row.split(',')])
-
-W3 = np.array(W3)
-
-# Entradas para el vector b3
-st.subheader('Vector de sesgo b3')
-b3 = st.text_input('Vector b3 (separar valores por comas)', value='0')
-b3 = np.array([float(val) for val in b3.split(',')]).reshape(1, -1)
+# Definir pesos y sesgos (fijos para la demostración)
+W1 = np.array([[0.2, 0.4], [0.5, 0.6], [0.1, 0.3]])  # Cambia esto según tus necesidades
+b1 = np.array([[0.1, 0.2]])  # Cambia esto según tus necesidades
+W2 = np.array([[0.3], [0.7]])  # Cambia esto según tus necesidades
+b2 = np.array([[0.5]])  # Cambia esto según tus necesidades
+W3 = np.array([[0.6]])  # Cambia esto según tus necesidades
+b3 = np.array([[0.4]])  # Cambia esto según tus necesidades
 
 # Realizar el forward pass y mostrar resultados
 if st.button('Calcular'):
