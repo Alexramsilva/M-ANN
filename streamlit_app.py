@@ -109,6 +109,8 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+# Añadir la línea separadora
+st.markdown("<hr>", unsafe_allow_html=True)
 
 # Insertar el código HTML con estilos personalizados
 st.markdown("""
